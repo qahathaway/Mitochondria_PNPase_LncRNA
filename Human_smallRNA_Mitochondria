@@ -1,0 +1,12 @@
+###Human-Mitochondria-smallRNA###
+
+##Build Reference Genome##
+"path_to_bowtie-1.2.2"/bowtie-build --threads 20 "path_to_Homo_sapiens.GRCh38.dna.primary_assembly_95" "path_to_Bowtie_GRCh_95"
+
+##Remove Adapters##
+cutadapt -a TGGAATTCTCGGGTGCCAAGG -o "path_to_output_1_fastq" --minimum-length=23 "path_to_input_fastq"
+cutadapt -u 4 -u -4 -o "path_to_output_2_fastq" "path_to_output_1_fastq"
+
+#Creation of BAM#
+"path_to_bowtie-1.2.2/bowtie -q -a -m 3 --best --strata --threads 32 -t --sam "path_to_Bowtie_GRCh_96" "path_to_output_2_fastq" |
+    samtools view -b -> "path_to_output_BAM"
