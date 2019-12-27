@@ -1,12 +1,13 @@
-###Differential Expression Analysis###
 
-library("HumanSmallRNA")
+####SummarizedExperiment####
 
-indir <- system.file("extdata", package="your_package", mustWork=TRUE)
+library("HumanLncRNA2019")
+
+indir <- system.file("extdata", package="HumanLncRNA2019", mustWork=TRUE)
 
 list.files(indir)
 
-csvfile <- file.path(indir, "your_file.csv")
+csvfile <- file.path(indir, "sample_table_Human_Lnc.csv")
 sampleTable <- read.csv(csvfile, row.names = 1)
 sampleTable
 
@@ -19,7 +20,7 @@ seqinfo(bamfiles[1])
 
 library("GenomicFeatures")
 
-gtffile <- file.path(indir,"your_GTF")
+gtffile <- file.path(indir,"Homo_sapiens.GRCh38.98.gtf")
 txdb <- makeTxDbFromGFF(gtffile, format = "gtf", circ_seqs = character())
 txdb
 
@@ -37,6 +38,7 @@ library("BiocParallel")
 
 register(SerialParam())
 
+###Either singleEnd=TRUE & fragments=FALSE or singleEND=FALSE & fragments=TRUE
 se <- summarizeOverlaps(features=ebg, reads=bamfiles,
                         mode="Union",
                         singleEnd=FALSE,
@@ -53,18 +55,18 @@ str(metadata(rowRanges(se)))
 
 ###Make Counts Table###
 
-assay(se)
+#assay(se)
 resOrderedCounts <- as.data.frame(assay(se))
-write.csv(resOrderedCounts, file = "output_counts.csv")
+write.csv(resOrderedCounts, file = "/home/john/Documents/PNPase_LncRNA_Project/Human_ALL_mRNA.csv")
 
 colData(se)
 colData(se) <- DataFrame(sampleTable)
 colData(se)
 
 library("magrittr")
-se$dex %<>% relevel("untrt")
+se$dex %<>% relevel("untrt2")
 se$dex
-se$dex <- relevel(se$dex, "untrt")
+se$dex <- relevel(se$dex, "untrt2")
 
 
 
@@ -76,14 +78,21 @@ colData(se)
 library("DESeq2")
 dds <- DESeqDataSet(se, design = ~ dex)
 
-###Starting from Count Matrices###
 
-#HumanLncCounts_noncoding <- read.csv("read_counts.csv", row.names = 1)
+
+
+
+
+
+
+####Starting from Count Matrices####
+
+#HumanLncCounts_noncoding <- read.csv("/home/john/Documents/PNPase_LncRNA_Project/FINAL/Human_LncRNA/Human_Lnc_counts.csv", row.names = 1)
 
 #countdata <- HumanLncCounts_noncoding
 #head(countdata, 3)
 
-#coldata <- DataFrame(read.csv(file = "~/Documents/Bioinformatics_Seq_Files/Fastq/Human_LncRNA_2019/Data/sample_table_Human_Lnc_Counts_Cyto.csv"
+#coldata <- DataFrame(read.csv(file = "/home/john/Documents/PNPase_LncRNA_Project/SampleTable/sample_table_Human_Lnc.csv"
 #                              , row.names = 1))
 
 #dds <- DESeqDataSetFromMatrix(countData = countdata,
@@ -188,40 +197,41 @@ summary(res)
 
 
 #VennDiagram
+
+library(limma)
+
 res1 <- results(dds, contrast=c("dex","trt","untrt"), alpha = 0.05)
-res1 <- subset(res1, res1$padj <= 0.05)
-#res1 <- res1[which(res1$padj < 0.05),]
+res1 <- res1[which(res1$padj < 0.05),]
 res1.genes <- row.names(res1)
 
 res2 <- results(dds, contrast=c("dex","trt2","untrt2"), alpha = 0.05)
-res2 <- subset(res2, res2$padj <= 0.017)
-#res2 <- res2[which(res2$padj < 0.05),]
+res2 <- res2[which(res2$padj < 0.05),]
 res2.genes <- row.names(res2)
 
 res3 <- results(dds, contrast=c("dex","trt2","trt"), alpha = 0.05)
-res3 <- subset(res3, res3$padj <= 0.0151)
-#res3 <- res3[which(res3$padj < 0.05),]
+res3 <- res3[which(res3$padj < 0.05),]
 res3.genes <- row.names(res3)
 
 res4 <- results(dds, contrast=c("dex","untrt2","untrt"), alpha = 0.05)
-res4 <- subset(res4, res4$padj <= 0.0151)
-#res4 <- res4[which(res4$padj < 0.05),]
+res4 <- res4[which(res4$padj < 0.05),]
 res4.genes <- row.names(res4)
 
-comb <- c(res1.genes,res2.genes,res3.genes,res4.genes)
+Unique <- sort(unique(c(res1.genes, res2.genes, res3.genes, res4.genes)))
 
-res1.genes.2 <- comb %in% res1.genes
-res2.genes.2 <- comb %in% res2.genes
-res3.genes.2 <- comb %in% res3.genes
-res4.genes.2 <- comb %in% res4.genes
+res1.genes.2 <- Unique %in% res1.genes
+res2.genes.2 <- Unique %in% res2.genes
+res3.genes.2 <- Unique %in% res3.genes
+res4.genes.2 <- Unique %in% res4.genes
 
-counts.1 <- cbind(res1.genes.2, res2.genes.2,res3.genes.2,res4.genes.2)
+counts.1 <- cbind(res1.genes.2,res2.genes.2,res3.genes.2,res4.genes.2)
 
-results.1 <- vennCounts(counts.1)
+results.1 <- vennCounts(counts.1, include="both")
 
-vennDiagram(results.1, cex = 1,names = c("1","2", "3", "4"), circle.col = c("blue", "red", "green", "orange"))
+vennDiagram(results.1, include="both", cex = 1, names = c("","","",""), circle.col = c("blue", "red", "green", "black"))
 
 #Other Visualizations
+
+library(vidger)
 
 vsBoxPlot(dds, d.factor = "dex", type = "deseq")
 vsDEGMatrix(dds, d.factor = "dex", padj = 0.05, type = "deseq")
@@ -230,11 +240,15 @@ vsMAMatrix(dds, d.factor = "dex", type = "deseq", y.lim = c(-10,10))
 vsScatterMatrix(dds, d.factor = "dex", type = "deseq")
 vsScatterPlot("untrt2", "trt2", dds, d.factor = "dex", type = "deseq")
 vsVolcano("untrt2", "trt2", dds, d.factor = "dex", type = "deseq", x.lim = c(-10,10), padj = 0.05)
-vsVolcanoMatrix(dds, d.factor = "dex", type = "deseq", lfc = 1, padj = 0.05, x.lim = c(-10,10))
+vsVolcanoMatrix(dds, d.factor = "dex", type = "deseq", lfc = 2, padj = 0.05, x.lim = c(-8,8),
+                title = FALSE, legend = TRUE, grid = TRUE, counts = FALSE, facet.title.size = 10)
 
 #Volcano Plots
 
-EnhancedVolcano(res1, lab = rownames(res), x = "log2FoldChange", y = "padj", pCutoff = 0.05, xlim = c(-5, 7),  ylim = c(0, -log10(10e-8)))
+library(EnhancedVolcano)
+
+EnhancedVolcano(res2, lab = rownames(res), x = "log2FoldChange", y = "padj", pCutoff = 0.05,
+                xlim = c(-5, 7),  ylim = c(0, -log10(10e-11)))
 
 #Strict Parameters
 #res.05 <- results(dds, alpha = 0.01)
@@ -246,14 +260,17 @@ EnhancedVolcano(res1, lab = rownames(res), x = "log2FoldChange", y = "padj", pCu
 topGene <- rownames(res)[which.min(res$padj)]
 plotCounts(dds, gene = topGene, intgroup=c("dex"))
 
+GeneofChoice <- "ENSMUSG00000092341"
+plotCounts(dds, gene = GeneofChoice, intgroup=c("dex"))
+
 library("ggbeeswarm")
-geneCounts <- plotCounts(dds, gene = topGene, intgroup = c("dex","Run"),
+geneCounts <- plotCounts(dds, gene = GeneofChoice, intgroup = c("dex","Run"),
                          returnData = TRUE)
 ggplot(geneCounts, aes(x = dex, y = count, color = Run)) +
   scale_y_log10() +  geom_beeswarm(cex = 3)
 
 #MA-Plot
-res <- lfcShrink(dds, contrast=c("dex","trt","untrt"), res=res)
+res <- lfcShrink(dds, contrast=c("dex","untrt2","untrt"), res=res)
 plotMA(res, ylim = c(-6, 6))
 
 #MA-Plot with top gene
@@ -271,9 +288,9 @@ hist(res$pvalue[res$baseMean > 1], breaks = 0:20/20,
 ##Gene Clustering##
 
 library("genefilter")
-topVarGenes <- head(order(rowVars(assay(rld)), decreasing = TRUE), 100)
+topVarGenes <- head(order(rowVars(assay(rld)), decreasing = TRUE), 500)
 #or#
-topGenes <- head(order(res$padj),decreasing = TRUE, 750)
+topGenes <- head(order(res$padj),decreasing = TRUE, 500)
 
 mat  <- assay(rld)[ topGenes, ]
 mat  <- mat - rowMeans(mat)
@@ -282,15 +299,15 @@ pheatmap(mat, annotation_col = anno)
 
 #Annotating and Exporting
 library("AnnotationDbi")
-library("org.Hs.eg.db")
-columns(org.Hs.eg.db)
+library("org.Mm.eg.db")
+columns(org.Mm.eg.db)
 
-res$symbol <- mapIds(org.Hs.eg.db,
+res$symbol <- mapIds(org.Mm.eg.db,
                      keys=row.names(res),
                      column="SYMBOL",
                      keytype="ENSEMBL",
                      multiVals="first")
-res$entrez <- mapIds(org.Hs.eg.db,
+res$entrez <- mapIds(org.Mm.eg.db,
                      keys=row.names(res),
                      column="ENTREZID",
                      keytype="ENSEMBL",
@@ -298,7 +315,7 @@ res$entrez <- mapIds(org.Hs.eg.db,
 
 resOrdered <- res[order(res$padj),]
 resOrdered <- res[order(res$baseMean, decreasing = TRUE),]
-head(resOrdered)
+head(resOrdered, 8)
 
 #Plotting fold changes in genomic space
 #Set function topGene to any gene in the Mitochondria
@@ -338,8 +355,8 @@ plotTracks(list(g, d, a), groupAnnotation = "group",
 #resOrderedDF <- as.data.frame(resOrdered)[1:1000, ]
 #write.csv(resOrderedDF, file = "resultstest.csv")
 
-resOrderedDF <- as.data.frame(resOrdered)[1:20000, ]
-write.csv(resOrderedDF, file = "your_results.csv")
+resOrderedDF <- as.data.frame(resOrdered)[1:30000, ]
+write.csv(resOrderedDF, file = "/home/john/Documents/PNPase_LncRNA_Project/Mouse_LncRNA_untrt2vsuntrt.csv")
 
 ###edgeR - Differential Expression Analysis###
 
