@@ -1,0 +1,24 @@
+###IntaRNA 2.0###
+
+IntaRNA --outNumber=5 -t path/to/mt-Nd4-201.fa -q path/to/Malat1-204.fa
+IntaRNA --outNumber=5 -t path/to/mt-Nd4-201.fa -q path/to/miRNA-23b-3p.fa
+IntaRNA --outNumber=5 -t path/to/mt-Rnr1-201.fa -q path/to/Malat1-204.fa
+IntaRNA --outNumber=5 -t path/to/mt-Rnr1-201.fa -q path/to/miRNA-23b-3p.fa
+
+
+
+###RGT-TDF###
+
+##Human##
+#hsa-mir-23b-3p
+rgt-TDF get_TTS -i path/to/MT-DNA.bed -tts path/to/hsa-miRNA23b-3p_TTSs.bed -r path/to/hsa-miRNA23b-3p.fa -organism hg38
+
+#MALAT1-201
+rgt-TDF get_TTS -i path/to/MT-DNA.bed -tts path/to/MALAT1-201_TTSs.bed -r path/to/MALAT1-201.fa -organism hg38
+
+##Mouse##
+#mmu-mir-23b-3p
+rgt-TDF get_TTS -i path/to/mt-DNA.bed -tts path/to/mmu-miRNA23b-3p_TTSs.bed -r path/to/mmu-miRNA23b-3p.fa -organism mm9
+
+#Malat1-204
+rgt-TDF get_TTS -i path/to/mt-DNA.bed -tts path/to/Malat1-204_TTSs.bed -r path/to/Malat1-204.fa -organism mm9
