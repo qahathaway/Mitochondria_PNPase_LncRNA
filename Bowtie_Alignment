@@ -1,0 +1,49 @@
+
+###View Fastq###
+zcat /path/to/file.fastq.gz | head -50
+
+
+
+###Bowtie-Build###
+bowtie-build --threads 32 /path/to/dna.primary_assembly.fa /path/to/Bowtie_Index
+
+
+
+###AGO2/FXR1 - Mouse###
+cutadapt -a TGGAATTCTCGGGTGCCAAGG -o /path/to/file_t1.fastq.gz --minimum-length=12 /path/to/file.fastq.gz
+
+bowtie -n 0 -l 10 -m 500 --best --strata --threads 32 -t --chunkmbs 250 --sam /path/to/Bowtie_Index /path/to/file_t1.fastq.gz | samtools view -b -> /path/to/file.bam
+
+
+
+###PNPase - Mouse###
+cutadapt -a TGGAATTCTCGGGTGCCAAGG -o /path/to/file_t1.fastq.gz --minimum-length=23 /path/to/file.fastq.gz
+
+cutadapt -u 4 -u -4 -o /path/to/file_t2.fastq.gz /path/to/file_t1.fastq.gz
+
+bowtie -n 0 -l 10 -m 500 --best --strata --threads 32 -t --chunkmbs 250 --sam /path/to/Bowtie_Index /path/to/file_t2.fastq.gz | samtools view -b -> /path/to/file.bam
+
+
+
+###PNPase - Human###
+cutadapt -a TGGAATTCTCGGGTGCCAAGG -o /path/to/file_t1.fastq.gz --minimum-length=23 /path/to/file.fastq.gz
+
+cutadapt -u 4 -u -4 -o /path/to/file_t2.fastq.gz /path/to/file_t1.fastq.gz
+
+bowtie -n 0 -l 10 -m 500 --best --strata --threads 32 -t --chunkmbs 250 --sam /path/to/Bowtie_Index /path/to/file_t2.fastq.gz | samtools view -b -> /path/to/file.bam
+
+
+
+###Mitochondria - MiRNA - Human###
+#Lane1
+cutadapt -a TGGAATTCTCGGGTGCCAAGG -o /path/to/file_L1_t1.fastq.gz --minimum-length=23 /path/to/file_L1.fastq.gz
+
+cutadapt -u 4 -u -4 -o /path/to/file_L1_t2.fastq.gz /path/to/file_L1_t1.fastq.gz
+
+#Lane2
+cutadapt -a TGGAATTCTCGGGTGCCAAGG -o /path/to/file_L2_t1.fastq.gz --minimum-length=23 /path/to/file_L2.fastq.gz
+
+cutadapt -u 4 -u -4 -o /path/to/file_L2_t2.fastq.gz /path/to/file_L2_t1.fastq.gz
+
+
+bowtie -n 0 -l 10 -m 100 --best --strata --threads 32 -t --chunkmbs 250 --sam /path/to/Bowtie_Index /path/to/file_L1_t2.fastq.gz,/path/to/file_L2_t2.fastq.gz | samtools view -b -> /path/to/file.bam
