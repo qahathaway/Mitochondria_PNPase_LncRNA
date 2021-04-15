@@ -98,7 +98,7 @@ dds <- DESeqDataSet(se, design = ~ dex)
 ####Sample Distribution####
 
 nrow(dds)
-dds <- dds[ rowSums(counts(dds)) > 1, ]
+dds <- dds[ rowSums(counts(dds)) > 2, ]
 nrow(dds)
 
 ##Data Normalization Assessment
