@@ -1,6 +1,4 @@
->KCNQ1OT1 (11:2608328-2699994)
-gcugcaacccuccuagcuuccuguauggaagggccaagagcuguagucaucugcagauc
->XACT (X:113616300-114059289)
+>XACT
 gggaacuagauuauguaguuucacaagcggugguaaggcacuuggauuuuauuguaaaua
 >HELLPAR
 uuagggauuaguauuuuaaguuacaucuccuuuuaaccaacaauauaaaucuuagacuca
@@ -480,4 +478,3 @@ gaggguuaauugacauagcuguuuacagcgacgaaggcagucagcgaggaccuuaacaaa
 gaucaucuauaguacagaaagcucuugcuaggggaauuguauucgggcuuccacucuacg
 >random119
 agugacauacaguccagucaaguucgcacguugcaacuaaggaccgacauuggccaucug
-
