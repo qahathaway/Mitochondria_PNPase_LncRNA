@@ -64,25 +64,3 @@ AUC=perf_AUC@y.values[[1]]
 perf_ROC=performance(pred,"tpr","fpr")
 plot(perf_ROC, main="ROC plot")
 text(0.5,0.3,paste("AUC = ",format(AUC, digits=5, scientific=FALSE)))
-
-
-
-###Unsupervised###
-Features_All<- read.csv("path_to_your_files.csv", row.names=1)
-n=2
-clust.iris <- rf.unsupervised(Features_All[,2:135], n=n, proximity = TRUE,
-                              silhouettes = TRUE)
-rf.unsuper <- as.data.frame(clust.iris$k)
-
-mds <- stats:::cmdscale(clust.iris$distances, eig=TRUE, k=n)
-colnames(mds$points) <- paste("Dim", 1:n)
-mds.col <- ifelse(clust.iris$k == 1, rainbow(4)[1],
-                  ifelse(clust.iris$k == 2, rainbow(4)[2],
-                         ifelse(clust.iris$k == 3, rainbow(4)[3],
-                                ifelse(clust.iris$k == 4, rainbow(4)[4], NA))))
-
-par(mfrow=c(1,1))
-plot(mds$points[,1:2],col=mds.col, pch=20, cex = 2.5)
-pairs(mds$points, col=mds.col, pch=20)
-
-write.csv(rf.unsuper, file = "path_to_your_files/Cluster.csv")
