@@ -1,0 +1,45 @@
+
+###View Fastq###
+zcat /path_to_your_files.fastq.gz | head -50
+
+
+
+###Bowtie-Build###
+
+bowtie-build --threads 32 /path_to_your_files/Homo_sapiens.GRCh38.dna.primary_assembly_103.fa /path_to_your_files/Bowtie_Human_E103
+
+bowtie-build --threads 32 /path_to_your_files/Mus_musculus.GRCm39.dna.primary_assembly_103.fa /path_to_your_files/Bowtie_Mouse_E103
+
+
+
+###PNPase - Mouse###
+cutadapt -a TGGAATTCTCGGGTGCCAAGG -o /path_to_your_files.fastq.gz --minimum-length=23 /path_to_your_files.fastq.gz
+
+cutadapt -u 4 -u -4 -o /path_to_your_files.fastq.gz /path_to_your_files.fastq.gz
+
+bowtie -a --best --threads 32 -t --chunkmbs 250 --sam /path_to_your_files/Bowtie_Mouse_E103 /path_to_your_files.fastq.gz | samtools view -b -> /path_to_your_files.bam
+
+##Samtools View##
+samtools sort -o /path_to_your_files.bam /path_to_your_files.bam
+
+samtools index /path_to_your_files.sorted.bam /path_to_your_files.sorted.bam.bai
+
+samtools view /path_to_your_files.bam chr:gene-region | cut -f 10
+
+
+
+###PNPase - Human###
+cutadapt -a TGGAATTCTCGGGTGCCAAGG -o /path_to_your_files.fastq.gz --minimum-length=23 /path_to_your_files.fastq.gz
+
+cutadapt -u 4 -u -4 -o /path_to_your_files.fastq.gz /path_to_your_files.fastq.gz
+
+bowtie -a --best --threads 32 -t --chunkmbs 250 --sam /path_to_your_files/Bowtie_Human_E103 /path_to_your_files.fastq.gz | samtools view -b -> /path_to_your_files.bam
+
+##Samtools View##
+samtools sort -o /path_to_your_files.bam /path_to_your_files.bam
+
+samtools index /path_to_your_files.sorted.bam /path_to_your_files.sorted.bam.bai
+
+samtools view /path_to_your_files.bam chr:gene-region | cut -f 10
+
+
