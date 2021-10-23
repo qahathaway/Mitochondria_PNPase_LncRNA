@@ -1,0 +1,483 @@
+>KCNQ1OT1 (11:2608328-2699994)
+GCTGCAACCCTCCTAGCTTCCTGTATGGAAGGGCCAAGAGCTGTAGTCATCTGCAGATC
+>XACT
+AGCGGTGGTAAGGCACTTGG
+>HELLPAR
+TTACATCTCCTTTTAACCAA
+>CCDC26
+GTCCCTCCCCACAACCTTCT
+>HULC
+CTGAAAATATAACAGGGCAG
+>DRAIC
+GAGTACAGGGCCAGGGGACC
+>LUCAT1
+CTCTCTCAATTTTTTCCACA
+>CASC15
+TCATTCCTTCTTCCTGACCC
+>PVT1
+ACACCTCCTTTCACACGGAC
+>FTX
+AGAACAACCTGAATCTGCTC
+>MEG3
+TTCATCGCCTCCTCTGTTCA
+>NEAT1
+GTTGTGGTTGGGGTCCTCTG
+>TEX41
+GCTAAGGATGTTTTGGCCCA
+>PWRN1
+ATTAGTACCACTCATGGTCC
+>SILC1
+CAATGAACATTCGAGGACTG
+>CARMN
+GGTCGGTGGGGGTGTCATAG
+>DLEU1
+CTGTTCTTCATGAGTCCCTT
+>CYTOR
+CGCAGGTAAAGCAGTGACCC
+>CASC19
+TCTCCATTAGTCCCCAATGC
+>TTTY14
+CCTGTGTCACTGAATTATAC
+>SAMMSON
+TGGTTTATTTTCCTCATTGA
+>PCAT1
+TACACCTTCAAAGTCAGAAA
+>CRNDE
+TGATGCAGCCACTATGGAAA
+>HCG18
+CCGAAAATGTAGATTCCTGC
+>OLMALINC
+AAATCACTCCACCAAAAAGA
+>DUBR
+TTGGCTAAGTGGAATTTCAG
+>XIST
+ATGGTTGTGGTCACTTACAA
+>AL136171.2
+TAAGGCTCTTGAGATAGGCC
+>MIAT
+AGGCTGGGGTCGAGGGTAGG
+>HCP5
+GCAGCATCTGACTCCAGCCA
+>PURPL
+GGTAACCATCATCCAGAGAT
+>PCA3
+TGCATGGCTGTCGCAACTAG
+>CASC2
+CCCCTTCTCTGAATCTCCAA
+>ERVK13.1
+TTCCCTCAGTCGGAAACCAA
+>LNC.LBCS
+AGACTGTTTCTTCCCTAACC
+>DGCR5
+CAGGGGGATGACTTGAGCCA
+>PART1
+CTCAATTTCTTTATTCTTGG
+>FIRRE
+GTCAGAATTCTTACACAAGA
+>DLEU2
+GGGAGAAAGCTGGCTGCCAT
+>TCL6
+TGGCTGGCTAATTTTTAAAT
+>PLAC4
+GGACTGAAGAGACTCTGGGG
+>CHROMR
+GAACTACTGGCCTCAGGGAA
+>AUXG01000058.1
+AATGTTCTACCAATACTGCT
+>TTTY10
+AACCTGCATGGTGCTGCCTC
+>PRNCR1
+CTCCTCCGTCTACCATGAGG
+>PELATON
+AGACTTCCCTTGTTTTTGAT
+>COLCA1
+GAGCAGCGAAGAAAAGAAGT
+>PANTR1
+TCTGCAGCTCAGTCAGAGTA
+>DANCR
+GAGCTACCCGACCTCTCCAG
+>PCAT19
+TCGATATTGGGAGTAATATC
+>PRANCR
+AGGGCCTAGGCAGTGCAAGG
+>KCNIP4.IT1
+GTGTGTGTGTGTGTGTGTGT
+>DIRC3
+GTTCCAGATGCTCCACACCC
+>MAILR
+ACCACATTTTCCTCTGTTTA
+>MALAT1
+TCAAATCCCTGCGGCGTCTT
+>RMST
+ATTTTACTGCATTTCCACTC
+>HAR1B
+TTCTCAAGGCCTCAGCGACA
+>PRECSIT
+TCCTTCAACTCGGTCCGTCT
+>DELEC1
+TCCCAATCTGTTCTACTCAG
+>MIATNB
+TTCAGACAGAATGTCACCCC
+>ARLNC1
+GACGCTAGAAGGAGGGTCCA
+>Morrbid
+TGAGGTGCAGCTTGAAATAA
+>Rian
+AGACACAAGAGGACTGCTGA
+>Neat1
+CACTACCACACCTGACCCGG
+>Meg3
+AGTCAACCCGACTGACTATG
+>Dbpht2
+GTGGGGAGCTCCACATGACC
+>Xist
+CAGTGAGGGCTGGGTCAGGA
+>Firre
+CAAGACTGAGGCTGAAGTCT
+>Hdnr
+GCGGGATGCAGGCGAGGGGG
+>Ftx
+TCAAAGTTCTCATTTTTAAT
+>Mirt1
+TTATACCAGTCTCCCCTGCA
+>Lockd
+AGACACAAGAGGACTGCTGA
+>Miat
+GAGGAGGCAGCAGGAGGGAA
+>Dleu2
+CAAGCATGTCTTCTCTTCTA
+>Mirg
+TGGCCTGAGGTCTGTAAGAG
+>Jpx
+GGAAGTATGGCATTAGATTA
+>Lncpint
+TGGTTTGAGAGGATAACTTG
+>Rmst
+TCCATTCTTCGGCCTTAACT
+>Chaserr
+ATCACATCCAACTTAGAACT
+>Ppnr
+GTGTGCACGCTATTTGGTCT
+>Dubr
+AACAGCATGCATAAACTCAA
+>Pvt1
+AAATTCCATCTTCCTCCCAG
+>Malat1
+TCCATCAGAAATTTGAACTT
+>Cep112it
+AAGCCTTTAATTTCCCCATT
+>Pantr1
+TTGCTTACAGTTTCAGACAG
+>Zfp660
+CCTCCAAAATATCATTTTAT
+>Peg13
+GGCTGGGTAACGGCATACGC
+>Norad
+CGCCGCCACTTTCGAGGCGT
+>Platr4
+TAGAGCAGCGGTAGAGTGCT
+>Fendrr
+CGTGCTGTGTGGGCTCTGTC
+>Wbscr25
+CCAGTTTGAGCTCTTCCTGC
+>Panct2
+GGATGGCTCAGTTGACTTCT
+>Trp53cor1
+GAACACTAGTGGCGAGAGCC
+>Nron
+CCAGCACTTCCACAATATTG
+>Rncr4
+AAATCCGACTCTGGGCTGGG
+>Flicr
+CCACAGTCTCTCTGCTCCTC
+>Pinc
+CCACAGTCTTAAAAGTTCTC
+>Platr1
+ACCCAGTCTTTAAGAATGGA
+>Platr21
+ACAGCATGCTACTTTACTGA
+>Nctc1
+GTAAAGAAGATAGAAACACA
+>Etohd2
+TTCACTGAGGCTCTCCCCTG
+>Carmn
+AGATAGAATTCCTGCAACTT
+>H19
+ACAATTAGGTGGTTGAGCGG
+>Celrr
+AGCCCCCCTTAATACATCAT
+>Erdr1
+CCCGCCGCCGCCGCCGCCGC
+>Lncenc1
+CGTTGTTAGTCTGAGGGGTT
+>Gas5
+TGAGGCGCGGGACCGGGAAG
+>Platr9
+AAGTAGGGCTGGAGAGATGG
+>Etos1
+TTCCACACCAGATATCTGTG
+>Platr23
+TGCAGCTCCCACGCCACGCT
+>Platr32
+CTAACTGATAGACAATCTTT
+>Mirt2
+GTCCAGGGGCAGCAACTAGC
+>Mexis
+CAGTCTCGTTAGAGGCCTCT
+>Drr1
+TTGCTGGCTGGTCACCTCGA
+>Trmt61b
+ATATAGCTCAGTTTGTAGAG
+>Lncbate10
+AGAATCCGGGATAGCACAGG
+>Crnde
+ATTTTGACAAGTTGAGCAGC
+>Redrum
+AGGAGACGGAGGAGGAGGAG
+>Kis2
+TAGGGGGGAAAGCCCGCCCC
+>Dancr
+CGAGACACAAAGTCCTCTGT
+>Platr14
+AAAGGACTCCATTTGAGCCT
+>random sequence 1 consisting of 100 bases.
+GGGCAGGACTCTCCGCTCAT
+>random sequence 2 consisting of 100 bases.
+CAGCGTGCACTTTAACCCAC
+>random sequence 3 consisting of 100 bases.
+GCACTTCTGGCCACTAACCT
+>random sequence 4 consisting of 100 bases.
+ACGGCATGACCCTTTCGAGT
+>random sequence 5 consisting of 100 bases.
+TCTTGTCTCGACTGACAATG
+>random sequence 6 consisting of 100 bases.
+CCTCAGGAACTGAAAACTGG
+>random sequence 7 consisting of 100 bases.
+CCACAGCGCTTATGGGTGAT
+>random sequence 8 consisting of 100 bases.
+CCACATATAGCTTGGAAAGT
+>random sequence 9 consisting of 100 bases.
+TGGTACTGGCTCTCGTATTG
+>random sequence 10 consisting of 100 bases.
+CAACTATCCCACGCCCTTGA
+>random sequence 11 consisting of 100 bases.
+CGAATACTCTCAACGCGATG
+>random sequence 12 consisting of 100 bases.
+CGCAGGTTCCCGCGCTTGCT
+>random sequence 13 consisting of 100 bases.
+GAATGCGGCTTAGCTTAGCT
+>random sequence 14 consisting of 100 bases.
+CCCTTCTACCTACCTTAAGA
+>random sequence 15 consisting of 100 bases.
+AAACTCACGTGGAATACTGT
+>random sequence 16 consisting of 100 bases.
+AAGTAGGAAAACGTGTTGAC
+>random sequence 17 consisting of 100 bases.
+GAGGTTGTACGGGACGCACA
+>random sequence 18 consisting of 100 bases.
+CGGGAACCAAGCTTCAATGG
+>random sequence 19 consisting of 100 bases.
+GTATCGCCCCGAGCACCGAT
+>random sequence 20 consisting of 100 bases.
+CAGCAGGTGATGGCGTTTTG
+>random sequence 21 consisting of 100 bases.
+GGGCTGAGCTGTCTAATCTA
+>random sequence 22 consisting of 100 bases.
+GACCAGCCCTTACTGTAGTA
+>random sequence 23 consisting of 100 bases.
+AGGTAAGTTGAAGTGTTAAC
+>random sequence 24 consisting of 100 bases.
+ATGGTCCTGACGCCCCCCAG
+>random sequence 25 consisting of 100 bases.
+GAAGAGAATGAAACAGATTA
+>random sequence 26 consisting of 100 bases.
+CGCCCATTAGGAGATCCCTG
+>random sequence 27 consisting of 100 bases.
+GGGTTTGTCCCCCCGATTGC
+>random sequence 28 consisting of 100 bases.
+TCTCCCGTGTGTTTATGCGG
+>random sequence 29 consisting of 100 bases.
+TCGGGCGCGCGGATACCAGT
+>random sequence 30 consisting of 100 bases.
+AGGGTGCTTCATACAACCTT
+>random sequence 31 consisting of 100 bases.
+TACACGCAAACCTGGAATTG
+>random sequence 32 consisting of 100 bases.
+GAACGGTTAATCTGCCCCTT
+>random sequence 33 consisting of 100 bases.
+GATGGAGATGGTCTGCGAAG
+>random sequence 34 consisting of 100 bases.
+AGGCTTCAATGTAACAAATC
+>random sequence 35 consisting of 100 bases.
+CAGGACTCGTTCATCGCCAT
+>random sequence 36 consisting of 100 bases.
+ATTCCATAAGAGACCCTTTG
+>random sequence 37 consisting of 100 bases.
+TGGTTTCGGCCGTGAGGTCT
+>random sequence 38 consisting of 100 bases.
+CTGCACTAAGCTGATGATTG
+>random sequence 39 consisting of 100 bases.
+ATTCAATACGTGCCCACCAA
+>random sequence 40 consisting of 100 bases.
+TACGGAAGGTGAAGGTTCAG
+>random sequence 41 consisting of 100 bases.
+ATGTGGAGCTCATCCTGATA
+>random sequence 42 consisting of 100 bases.
+GTAGTAGAGTTCCTACAACA
+>random sequence 43 consisting of 100 bases.
+AAGCGCATATACTTTCAGTG
+>random sequence 44 consisting of 100 bases.
+TCTGAACGCTTGCACAGGCT
+>random sequence 45 consisting of 100 bases.
+AAGCATCGACTGGGGCACGC
+>random sequence 46 consisting of 100 bases.
+AATTTCACTGGTCAATACAT
+>random sequence 47 consisting of 100 bases.
+CGATAGTTGTTGTTGAGAGC
+>random sequence 48 consisting of 100 bases.
+TTTATGTCGCTAGGCCTAGA
+>random sequence 49 consisting of 100 bases.
+GGGTCGGCCACAACACTTGA
+>random sequence 50 consisting of 100 bases.
+CCGTTGGGGCTGAGATCGGC
+>random sequence 51 consisting of 100 bases.
+TTGGGCCCGGAGGTTTGTTC
+>random sequence 52 consisting of 100 bases.
+GAGGACGTCGATATTCGCTT
+>random sequence 53 consisting of 100 bases.
+AGAAGTAGGCTCAGTTGGCC
+>random sequence 54 consisting of 100 bases.
+TAACGACATTCAACGCCTGT
+>random sequence 55 consisting of 100 bases.
+TATGCAACACCGGCTGGTCC
+>random sequence 56 consisting of 100 bases.
+GGAGCGTATACTACAACTTG
+>random sequence 57 consisting of 100 bases.
+CCCACTAAGGCTCCAGATAA
+>random sequence 58 consisting of 100 bases.
+TACATGAACTTGGTACGAGA
+>random sequence 59 consisting of 100 bases.
+ATAAATAAAATTGCGGCCGT
+>random sequence 60 consisting of 100 bases.
+ACCTTACCCTTCTATATAGT
+>random sequence 61 consisting of 100 bases.
+TTCAGAGCTTATGGAACACT
+>random sequence 62 consisting of 100 bases.
+ATGCTGCTCGCATTCTGCTC
+>random sequence 63 consisting of 100 bases.
+TTCAACGGCTCTCGCATTCA
+>random sequence 64 consisting of 100 bases.
+GAGGTCCGTAAAGGAGACTC
+>random sequence 65 consisting of 100 bases.
+TGTCCCCGAAACTTTCCGTC
+>random sequence 66 consisting of 100 bases.
+ATACCGTATGGGTGCATGAG
+>random sequence 67 consisting of 100 bases.
+CCTTGTAAAACCGCGGAGTT
+>random sequence 68 consisting of 100 bases.
+AGGGGACCAACTGAGGCCTG
+>random sequence 69 consisting of 100 bases.
+AACTAGAGTCAAGGATCCAA
+>random sequence 70 consisting of 100 bases.
+GACTATGTCAAGTTTGAACT
+>random sequence 71 consisting of 100 bases.
+CTCTCGGTGATTCTCAACCA
+>random sequence 72 consisting of 100 bases.
+TTCAGTAGAAGGCCCCCGGA
+>random sequence 73 consisting of 100 bases.
+CCTCCTACCGGTAAGTTGAG
+>random sequence 74 consisting of 100 bases.
+TTGTAGCCCGATGTATTCTA
+>random sequence 75 consisting of 100 bases.
+CAGAGTATGCACCGATGTTA
+>random sequence 76 consisting of 100 bases.
+CTCGCCAGCCCGCTAAGGCT
+>random sequence 77 consisting of 100 bases.
+GGACGACCACACGTGCCCCA
+>random sequence 78 consisting of 100 bases.
+AGCCTAAAACCGTTTCATCT
+>random sequence 79 consisting of 100 bases.
+TTGCCGCCTAACAGACCATC
+>random sequence 80 consisting of 100 bases.
+AATTGTCTCGTATGGCCACC
+>random sequence 81 consisting of 100 bases.
+ACTGGCCCTCTTCAGATTGA
+>random sequence 82 consisting of 100 bases.
+CTCATTAACGTACATTGGCA
+>random sequence 83 consisting of 100 bases.
+CCCTCCCGATTTCACTAACA
+>random sequence 84 consisting of 100 bases.
+CAAGAGAACTCACCTGTGTC
+>random sequence 85 consisting of 100 bases.
+TCCTACGCCAGTCTCGTGTA
+>random sequence 86 consisting of 100 bases.
+GACCACAGCCACGCAACCTA
+>random sequence 87 consisting of 100 bases.
+AGCCCATAAAGTAAGTTTGT
+>random sequence 88 consisting of 100 bases.
+GTCTGTACTGGTTAACGTAT
+>random sequence 89 consisting of 100 bases.
+TTCACAAAACCCCTAGTGCG
+>random sequence 90 consisting of 100 bases.
+GACGAGACTATATAGTACGT
+>random sequence 91 consisting of 100 bases.
+CAGTCGGGCTAGCGGCTCCG
+>random sequence 92 consisting of 100 bases.
+CTGGTGTGGATACACAATTC
+>random sequence 93 consisting of 100 bases.
+CAGTGCTCCGGCAACTGGAC
+>random sequence 94 consisting of 100 bases.
+CCATTCAGGTCGTGGAGGAT
+>random sequence 95 consisting of 100 bases.
+CGTCCTGTAAAGACTTCCGC
+>random sequence 96 consisting of 100 bases.
+GCGAAAGCACCAAGATGGAA
+>random sequence 97 consisting of 100 bases.
+GTCCACAATAGCGTGTTTAC
+>random sequence 98 consisting of 100 bases.
+TGGATGCCAGTCCAATGGTA
+>random sequence 99 consisting of 100 bases.
+GTTTGTAACATGCGCCTCAT
+>random sequence 100 consisting of 100 bases.
+CGCCACAGCCTCGCAGGGGC
+>random sequence 101 consisting of 100 bases.
+ATTGCGTCTTTTTTCGGCTT
+>random sequence 102 consisting of 100 bases.
+AACCCAGAGTGCGCGTCGAC
+>random sequence 103 consisting of 100 bases.
+CATACTGACCATAGGTCGAA
+>random sequence 104 consisting of 100 bases.
+ACGACAGTCGGGGTCCGAGA
+>random sequence 105 consisting of 100 bases.
+ACAGCACCCTAGTTAGCGAT
+>random sequence 106 consisting of 100 bases.
+CAAGTAGTGACCCATATAGT
+>random sequence 107 consisting of 100 bases.
+GATGACTGTTTAACCGTCTC
+>random sequence 108 consisting of 100 bases.
+TCATCTCGGTGAGATGGTAC
+>random sequence 109 consisting of 100 bases.
+TGAATGCTTGGCACTGCTTT
+>random sequence 110 consisting of 100 bases.
+ACTTTGGCATGGAGTTCCAG
+>random sequence 111 consisting of 100 bases.
+ACTTATTACAATAGTTTGCT
+>random sequence 112 consisting of 100 bases.
+GGTGCATCTTAGGACACAAT
+>random sequence 113 consisting of 100 bases.
+CCCAGGTAAAGGCAAGGTTG
+>random sequence 114 consisting of 100 bases.
+CCTCGGCTAGCCTCGGCATC
+>random sequence 115 consisting of 100 bases.
+AGCAAGTGGCCCCGTATTCT
+>random sequence 116 consisting of 100 bases.
+ACCATGTTGGTCGGGAGCCT
+>random sequence 117 consisting of 100 bases.
+GTCTGCTCTTAAAGCCGACG
+>random sequence 118 consisting of 100 bases.
+GACGTCCCACTTCTTTTGTC
+>random sequence 119 consisting of 100 bases.
+AGACGCAGATCCTTAGGGCC
+>random sequence 120 consisting of 100 bases.
+CTGTACGGCTGTCGTCGTCT
+
