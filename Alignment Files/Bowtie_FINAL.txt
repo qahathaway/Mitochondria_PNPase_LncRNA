@@ -1,179 +1,69 @@
 
 ###View Fastq###
-zcat /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Human_Mito/C1-IFM_S4_L001_R1_001.fastq.gz | head -50
-
+zcat /path_to_your_files.fastq.gz | head -50
 
 
 ###Bowtie-Build###
-bowtie-build --threads 32 /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Rattus_norvegicus.Rnor_6.0.dna.toplevel_E98.fa /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/GRCr6_E98/GRCr6_E98
 
-bowtie-build --threads 32 /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Homo_sapiens.GRCh38.dna.primary_assembly_103.fa /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Bowtie_Human_E103/Bowtie_Human_E103
-
-bowtie-build --threads 32 /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Mus_musculus.GRCm39.dna.primary_assembly_103.fa /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Bowtie_Mouse_E103/Bowtie_Mouse_E103
-
-
-###AGO2/FXR1 - Mouse###
-cutadapt -a TGGAATTCTCGGGTGCCAAGG -o ~/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Sample_Hollander_8_t1.fastq.gz --minimum-length=12 ~/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Sample_Hollander_8.fastq.gz
-
-bowtie -n 0 -l 10 -m 500 --best --strata --threads 32 -t --chunkmbs 250 --sam /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Bowtie_Mouse_E98/Bowtie_Mouse_E98 ~/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Sample_Hollander_8_t1.fastq.gz | samtools view -b -> ~/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/Fxr1_IFM_DB_500.bam
-
-##Samtools View##
-samtools sort -o /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/Fxr1/Fxr1_SSM_ND_500.sorted.bam /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/Fxr1/Fxr1_SSM_ND_500.bam
-
-samtools index /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/Fxr1/Fxr1_SSM_ND_500.sorted.bam /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/Fxr1/Fxr1_SSM_ND_500.sorted.bam.bai
-
-#Malat1#
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/Fxr1/Fxr1_SSM_ND_500.sorted.bam 19:5795690-5802672 | cut -f 10
-
-#MiRNA-23b-3p#
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/Fxr1/Fxr1_SSM_ND_500.sorted.bam 13:63300484-63300557 | cut -f 10
-
-#Site-Specific MiRNA23b-3p/Malat1#
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/Ago2/Ago2_IFM_ND_500.sorted.bam 19:5797340-5797360 | cut -f 10
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/Ago2/Ago2_IFM_ND_500.sorted.bam 19:5797380-5797400 | cut -f 10
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/Ago2/Ago2_IFM_ND_500.sorted.bam 19:5797380-5797420 | cut -f 10
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/Ago2/Ago2_IFM_ND_500.sorted.bam 19:5797400-5797420 | cut -f 10
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/Ago2/Ago2_IFM_ND_500.sorted.bam 19:5797440-5797480 | cut -f 10
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/Ago2/Ago2_IFM_ND_500.sorted.bam 19:5797460-5797480 | cut -f 10
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/Ago2/Ago2_IFM_ND_500.sorted.bam 19:5797500-5797520 | cut -f 10
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/Ago2/Ago2_IFM_ND_500.sorted.bam 19:5797740-5797800 | cut -f 10
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/Ago2/Ago2_IFM_ND_500.sorted.bam 19:5797740-5797820 | cut -f 10
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/Ago2/Ago2_IFM_ND_500.sorted.bam 19:5797780-5797800 | cut -f 10
-
-##Bowtie View##
-bowtie -q -a -m 6 -v 1 --best --strata --threads 32 -t /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Bowtie_Mouse_E98/Bowtie_Mouse_E98 -c TTGATGCCTTGTAGAT
-
+bowtie-build --threads 32 /path_to_your_files/Homo_sapiens.GRCh38.dna.primary_assembly_103.fa /path_to_your_files/Bowtie_Human_E103
+bowtie-build --threads 32 /path_to_your_files/Mus_musculus.GRCm39.dna.primary_assembly_103.fa /path_to_your_files/Bowtie_Mouse_E103
 
 
 ###PNPase - Mouse###
-cutadapt -a TGGAATTCTCGGGTGCCAAGG -o /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Animal_PNPase/CLIP-SmallRNA-Animal-Diabetic-SSM_S2_L001_R1_001_t.fastq.gz --minimum-length=23 /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Animal_PNPase/CLIP-SmallRNA-Animal-Diabetic-SSM_S2_L001_R1_001.fastq.gz
+cutadapt -a TGGAATTCTCGGGTGCCAAGG -o /path_to_your_files.fastq.gz --minimum-length=23 /path_to_your_files.fastq.gz
 
-cutadapt -u 4 -u -4 -o /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Animal_PNPase/CLIP-SmallRNA-Animal-Diabetic-SSM_S2_L001_R1_001_t2.fastq.gz /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Animal_PNPase/CLIP-SmallRNA-Animal-Diabetic-SSM_S2_L001_R1_001_t.fastq.gz
+cutadapt -u 4 -u -4 -o /path_to_your_files.fastq.gz /path_to_your_files.fastq.gz
 
-bowtie -n 0 -l 10 -m 5000 --best --strata --threads 32 -t --chunkmbs 250 --sam /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Bowtie_Mouse_E98/Bowtie_Mouse_E98 /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Animal_PNPase/CLIP-SmallRNA-Animal-Diabetic-SSM_S2_L001_R1_001_t2.fastq.gz | samtools view -b -> ~/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/PNPase/PNPase_SSM_A_DB_5000.bam
-
-
+bowtie -a --best --threads 32 -t --chunkmbs 250 --sam /path_to_your_files/Bowtie_Mouse_E103 /path_to_your_files.fastq.gz | samtools view -b -> /path_to_your_files.bam
 
 ##Samtools View##
-samtools sort -o /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/PNPase/PNPase_4.sorted.bam /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/PNPase/PNPase_4.bam
-
-samtools index /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/PNPase/PNPase_4.sorted.bam /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/PNPase/PNPase_4.sorted.bam.bai
-
-#Malat1#
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/PNPase/PNPase_4.sorted.bam 19:5795690-5802672 | cut -f 10
-
-#MiRNA-23b-3p#
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/PNPase/PNPase_4.sorted.bam 13:63300484-63300557 | cut -f 10
-
-#Site-Specific MiRNA23b-3p/Malat1#
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/PNPase/PNPase_4.sorted.bam 19:5797340-5797360 | cut -f 10
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/PNPase/PNPase_4.sorted.bam 19:5797380-5797400 | cut -f 10
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/PNPase/PNPase_4.sorted.bam 19:5797380-5797420 | cut -f 10
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/PNPase/PNPase_4.sorted.bam 19:5797400-5797420 | cut -f 10
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/PNPase/PNPase_4.sorted.bam 19:5797440-5797480 | cut -f 10
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/PNPase/PNPase_4.sorted.bam 19:5797460-5797480 | cut -f 10
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/PNPase/PNPase_4.sorted.bam 19:5797500-5797520 | cut -f 10
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/PNPase/PNPase_4.sorted.bam 19:5797740-5797800 | cut -f 10
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/PNPase/PNPase_4.sorted.bam 19:5797740-5797820 | cut -f 10
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/PNPase/PNPase_4.sorted.bam 19:5797780-5797800 | cut -f 10
-
-##Bowtie View##
-bowtie -q -m 6 -v 1 --best --strata --threads 32 -t /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Bowtie_Mouse_E98/Bowtie_Mouse_E98 -c AGGGACTTGGCTTCAATCAC
-
+samtools sort -o /path_to_your_files.bam /path_to_your_files.bam
+samtools index /path_to_your_files.sorted.bam /path_to_your_files.sorted.bam.bai
+samtools view /path_to_your_files.bam chr:gene-region | cut -f 10
 
 
 ###PNPase - Human###
-cutadapt -a TGGAATTCTCGGGTGCCAAGG -o /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/CLIP-SmallRNA-Human-Diabetic-SSM_S6_L001_R1_001_t.fastq.gz --minimum-length=23 /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/CLIP-SmallRNA-Human-Diabetic-SSM_S6_L001_R1_001.fastq.gz
+cutadapt -a TGGAATTCTCGGGTGCCAAGG -o /path_to_your_files.fastq.gz --minimum-length=23 /path_to_your_files.fastq.gz
 
-cutadapt -u 4 -u -4 -o /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/CLIP-SmallRNA-Human-Diabetic-SSM_S6_L001_R1_001_t2.fastq.gz /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/CLIP-SmallRNA-Human-Diabetic-SSM_S6_L001_R1_001_t.fastq.gz
+cutadapt -u 4 -u -4 -o /path_to_your_files.fastq.gz /path_to_your_files.fastq.gz
 
-bowtie -n 0 -l 10 -m 5000 --best --strata --threads 32 -t --chunkmbs 250 --sam /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Bowtie_Human_E98/Bowtie_Human_E98 /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/CLIP-SmallRNA-Human-Diabetic-SSM_S6_L001_R1_001_t2.fastq.gz | samtools view -b -> ~/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/PNPase_SSM_H_T2DM_5000.bam
-
-
-
-
-bowtie -a --best --strata --threads 32 -t --chunkmbs 250 --sam /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Bowtie_Human_E103/Bowtie_Human_E103 /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/CLIP-SmallRNA-Human-Diabetic-SSM_S6_L001_R1_001_t2.fastq.gz | samtools view -b -> /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/Bamfiles/PNPase_SSM_H_T2DM_abs.bam
-
-
-bowtie -a --best --threads 32 -t --chunkmbs 250 --sam /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Bowtie_Human_E103/Bowtie_Human_E103 /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/CLIP-SmallRNA-Human-Diabetic-SSM_S6_L001_R1_001_t2.fastq.gz | samtools view -b -> /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/Bamfiles/a_best/PNPase_SSM_H_T2DM_abs.bam
-
-bowtie -a -m5 --best --threads 32 -t --chunkmbs 250 --sam /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Bowtie_Human_E103/Bowtie_Human_E103 /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/CLIP-SmallRNA-Human-Diabetic-IFM_S8_L001_R1_001_t2.fastq.gz | samtools view -b -> /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/Bamfiles/a_m5/PNPase_SSM_H_T2DM_abs.bam
-
-bowtie -a -v 3 --best --strata --offrate 3 --threads 32 -t --chunkmbs 250 --sam /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Bowtie_Human_E103/Bowtie_Human_E103 /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/CLIP-SmallRNA-Human-Diabetic-SSM_S6_L001_R1_001_t2.fastq.gz | samtools view -b -> /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/Bamfiles/V3_offrate_3_strata/PNPase_SSM_H_T2DM_abs.bam
-
-bowtie -a -v 3 --best --strata --offrate 2 --threads 32 -t --chunkmbs 250 --sam /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Bowtie_Human_E103/Bowtie_Human_E103 /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/CLIP-SmallRNA-Human-Diabetic-SSM_S6_L001_R1_001_t2.fastq.gz | samtools view -b -> /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/Bamfiles/V3_offrate_2_strata/PNPase_SSM_H_T2DM_abs.bam
-
-bowtie -a -v 2 --best --strata --offrate 3 --threads 32 -t --chunkmbs 250 --sam /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Bowtie_Human_E103/Bowtie_Human_E103 /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/CLIP-SmallRNA-Human-Diabetic-SSM_S6_L001_R1_001_t2.fastq.gz | samtools view -b -> /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/Bamfiles/V2_offrate_3_strata/PNPase_SSM_H_T2DM_abs.bam
-
-bowtie -k 6 -y --best --strata --threads 32 -t --chunkmbs 250 --sam /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Bowtie_Human_E103/Bowtie_Human_E103 /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/CLIP-SmallRNA-Human-Diabetic-SSM_S6_L001_R1_001_t2.fastq.gz | samtools view -b -> /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/Bamfiles/y/PNPase_SSM_H_T2DM_abs.bam
-
-bowtie -a -y --best --strata --threads 32 -t --chunkmbs 250 --sam /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Bowtie_Human_E103/Bowtie_Human_E103 /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/CLIP-SmallRNA-Human-Diabetic-SSM_S6_L001_R1_001_t2.fastq.gz | samtools view -b -> /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/Bamfiles/a_y/PNPase_SSM_H_T2DM_abs.bam
-
-
-####AT#####
-Mouse bowtie build
-
-bowtie -a --best --strata --threads 32 -t --chunkmbs 250 --sam /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Bowtie_Mouse_E103/Bowtie_Mouse_E103 /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Animal_PNPase/CLIP-SmallRNA-Animal-Diabetic-SSM_S2_L001_R1_001_t2.fastq.gz | samtools view -b -> /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Animal_PNPase/Bamfiles/PNPase_SSM_M_Db_abs.bam
-IFM and SSM, ND and T2DM
-^get combined into PNPase_M in R
-
-bowtie -a --best --threads 32 -t --chunkmbs 250 --sam /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Bowtie_Mouse_E103/Bowtie_Mouse_E103 /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Animal_PNPase/CLIP-SmallRNA-Animal-Diabetic-SSM_S2_L001_R1_001_t2.fastq.gz | samtools view -b -> /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Animal_PNPase/Bamfiles/a_best/PNPase_SSM_Db_abs.bam
-
-####AT#####
+bowtie -a --best --threads 32 -t --chunkmbs 250 --sam /path_to_your_files/Bowtie_Human_E103 /path_to_your_files.fastq.gz | samtools view -b -> /path_to_your_files.bam
 
 ##Samtools View##
-samtools sort -o /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/Bamfiles/PNPaseCLIP_H4.sorted.bam /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/Bamfiles/PNPaseCLIP_H4.bam
-
-samtools index /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/Bamfiles/PNPaseCLIP_H4.sorted.bam /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/Bamfiles/PNPaseCLIP_H4.sorted.bam.bai
-
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/Bamfiles/PNPaseCLIP_H4.sorted.bam 11:65497688-65506431 | cut -f 10
-
-##Bowtie View##
-bowtie -q -a -m 6 -v 1 --best --strata --threads 32 -t /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Bowtie_Mouse_E98/Bowtie_Mouse_E98 -c TTGATGCCTTGTAGAT
+samtools sort -o /path_to_your_files.bam /path_to_your_files.bam
+samtools index /path_to_your_files.sorted.bam /path_to_your_files.sorted.bam.bai
+samtools view /path_to_your_files.bam chr:gene-region | cut -f 10
 
 
-
-###Mitochondria - MiRNA - Human###
-cutadapt -a TGGAATTCTCGGGTGCCAAGG -o /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Human_Mito/C1-IFM_S4_L001_R1_001_t.fastq.gz --minimum-length=23 /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Human_Mito/C1-IFM_S4_L001_R1_001.fastq.gz
-
-cutadapt -u 4 -u -4 -o /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Human_Mito/C1-IFM_S4_L001_R1_001_t2.fastq.gz /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Human_Mito/C1-IFM_S4_L001_R1_001_t.fastq.gz
-
-cutadapt -a TGGAATTCTCGGGTGCCAAGG -o /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Human_Mito/C1-IFM_S4_L002_R1_001_t.fastq.gz --minimum-length=23 /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Human_Mito/C1-IFM_S4_L002_R1_001.fastq.gz
-
-cutadapt -u 4 -u -4 -o /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Human_Mito/C1-IFM_S4_L002_R1_001_t2.fastq.gz /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Human_Mito/C1-IFM_S4_L002_R1_001_t.fastq.gz
-
-bowtie -n 0 -l 10 -m 100 --best --strata --threads 32 -t --chunkmbs 250 --sam /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Bowtie_Human_E98/Bowtie_Human_E98 /home/john/Documents/Bioinformatics_Seq_Files/Fastq/Human_Mito/U5-SSM_S15_L001_R1_001_t2.fastq.gz,/home/john/Documents/Bioinformatics_Seq_Files/Fastq/Human_Mito/U5-SSM_S15_L002_R1_001_t2.fastq.gz | samtools view -b -> ~/Documents/Bioinformatics_Seq_Files/Fastq/Ago2_Fxr1_Mouse_CLIP/Bamfiles/Mito_T2DM_8.bam
+###View Fastq###
+zcat /path_to_your_files.fastq.gz | head -50
 
 
 ###Only Reads >= 18nt and <= 24 included###
 
-
 ##Mouse##
-reformat.sh in=/home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Animal_PNPase/CLIP-SmallRNA-Animal-Control-IFM_S3_L001_R1_001_t2.fastq.gz out=/home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Animal_PNPase/18-24_CLIP-SmallRNA-Animal-Control-IFM_S3_L001_R1_001_t2.fastq.gz minlength=18 maxlength=24
+reformat.sh in=/path_to_your_files.fastq.gz out=/path_to_your_files.fastq.gz minlength=18 maxlength=24
 
-bowtie -a --best --threads 32 -t --chunkmbs 250 --sam /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Bowtie_Mouse_E103/Bowtie_Mouse_E103 /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Animal_PNPase/18-24_CLIP-SmallRNA-Animal-Control-IFM_S3_L001_R1_001_t2.fastq.gz | samtools view -b -> /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Animal_PNPase/Bamfiles_18-24/18-24_PNPase_IFM_M_WT_ab.bam
+bowtie -a --best --threads 32 -t --chunkmbs 250 --sam /path_to_your_files/Bowtie_Mouse_E103 /path_to_your_files.fastq.gz | samtools view -b -> /path_to_your_files.bam
 
-samtools sort -o /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Animal_PNPase/Bamfiles_18-24/18-24_PNPase_SSM_M_Db_ab.sorted.bam /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Animal_PNPase/Bamfiles_18-24/18-24_PNPase_SSM_M_Db_ab.bam
+samtools sort -o /path_to_your_files.sorted.bam /path_to_your_files.bam
 
-samtools index /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Animal_PNPase/Bamfiles_18-24/18-24_PNPase_SSM_M_Db_ab.sorted.bam /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Animal_PNPase/Bamfiles_18-24/18-24_PNPase_SSM_M_Db_ab.sorted.bam.bai
+samtools index /path_to_your_files.sorted.bam /path_to_your_files.sorted.bam.bai
 
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Animal_PNPase/Bamfiles_18-24/18-24_PNPase_SSM_M_Db_ab.sorted.bam X:113616300-114059289 | cut -f 10
+samtools view /path_to_your_files.sorted.bam X:113616300-114059289 | cut -f 10
 
 
 ##Human##
-reformat.sh in=/home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/CLIP-SmallRNA-Human-Control-IFM_S7_L001_R1_001_t2.fastq.gz out=/home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/18-24_CLIP-SmallRNA-Human-Control-IFM_S7_L001_R1_001_t2.fastq.gz minlength=18 maxlength=24
+reformat.sh in=/path_to_your_files.fastq.gz out=/path_to_your_files.fastq.gz minlength=18 maxlength=24
 
-bowtie -a --best --threads 32 -t --chunkmbs 250 --sam /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Bowtie_Human_E103/Bowtie_Human_E103 /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/18-24_CLIP-SmallRNA-Human-Control-IFM_S7_L001_R1_001_t2.fastq.gz | samtools view -b -> /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/Bamfiles_18-24/18-24_PNPase_IFM_H_ND_ab.bam
+bowtie -a --best --threads 32 -t --chunkmbs 250 --sam /path_to_your_files/Bowtie_Human_E103 /path_to_your_files.fastq.gz | samtools view -b -> /path_to_your_files.bam
 
-samtools sort -o /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/Bamfiles_18/18-22_PNPase_SSM_H_T2DM_abs.sorted.bam /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/Bamfiles_18/18-22_PNPase_SSM_H_T2DM_abs.bam
+samtools sort -o /path_to_your_files.sorted.bam /path_to_your_files.bam
 
-samtools index /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/Bamfiles_18/18-22_PNPase_SSM_H_T2DM_abs.sorted.bam /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/Bamfiles_18/18-22_PNPase_SSM_H_T2DM_abs.sorted.bam.bai
+samtools index /path_to_your_files.sorted.bam /path_to_your_files.sorted.bam.bai
 
-samtools view /home/john/Documents/Bioinformatics_Seq_Files/Fastq/PNPase_CLIP/Human_PNPase/Bamfiles_18/18-22_PNPase_SSM_H_T2DM_abs.sorted.bam X:113616300-114059289 | cut -f 10
+samtools view /path_to_your_files.sorted.bam X:113616300-114059289 | cut -f 10
 
 
 ##Bowtie View##
-bowtie -q -a -m 6 -v 1 --best --strata --threads 32 -t /home/john/Documents/Bioinformatics_Seq_Files/Reference_Genomes/Bowtie_Mouse_E98/Bowtie_Mouse_E98 -c TTGATGCCTTGTAGAT
-
-
-
+bowtie -q -a -m 6 -v 1 --best --strata --threads 32 -t /path_to_your_files/Bowtie_Human_E103 -c TTGATGCCTTGTAGAT
