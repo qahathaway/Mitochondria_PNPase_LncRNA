@@ -1,0 +1,87 @@
+
+CLIP-SmallRNA-Animal-Diabetic-SSM_S2_L001_R1_001_t2
+Input is being processed as unpaired
+Input:                  	301151 reads          	5775788 bases
+Short Read Discards:    	172906 reads (57.42%) 	3234870 bases (56.01%)
+Output:                 	128245 reads (42.58%) 	2540918 bases (43.99%)
+
+Time:                         	0.609 seconds.
+Reads Processed:        301k 	494.12k reads/sec
+Bases Processed:       5775k 	9.48m bases/sec
+
+
+CLIP-SmallRNA-Animal-Diabetic-IFM_S4_L001_R1_001_t2
+Input is being processed as unpaired
+Input:                  	179050 reads          	3466258 bases
+Short Read Discards:    	100383 reads (56.06%) 	1896218 bases (54.71%)
+Output:                 	78667 reads (43.94%) 	1570040 bases (45.29%)
+
+Time:                         	0.306 seconds.
+Reads Processed:        179k 	585.16k reads/sec
+Bases Processed:       3466k 	11.33m bases/sec
+
+
+CLIP-SmallRNA-Animal-Control-SSM_S1_L001_R1_001_t2
+Input is being processed as unpaired
+Input:                  	116872 reads          	2241409 bases
+Short Read Discards:    	77525 reads (66.33%) 	1466267 bases (65.42%)
+Output:                 	39347 reads (33.67%) 	775142 bases (34.58%)
+
+Time:                         	0.278 seconds.
+Reads Processed:        116k 	421.05k reads/sec
+Bases Processed:       2241k 	8.08m bases/sec
+
+
+CLIP-SmallRNA-Animal-Control-IFM_S3_L001_R1_001_t2
+Input is being processed as unpaired
+Input:                  	169819 reads          	3193467 bases
+Short Read Discards:    	106402 reads (62.66%) 	1940563 bases (60.77%)
+Output:                 	63417 reads (37.34%) 	1252904 bases (39.23%)
+
+Time:                         	0.314 seconds.
+Reads Processed:        169k 	540.49k reads/sec
+Bases Processed:       3193k 	10.16m bases/sec
+
+
+CLIP-SmallRNA-Human-Diabetic-SSM_S6_L001_R1_001_t2
+Input is being processed as unpaired
+Input:                  	218672 reads          	4209391 bases
+Short Read Discards:    	133970 reads (61.27%) 	2528005 bases (60.06%)
+Output:                 	84702 reads (38.73%) 	1681386 bases (39.94%)
+
+Time:                         	0.393 seconds.
+Reads Processed:        218k 	557.06k reads/sec
+Bases Processed:       4209k 	10.72m bases/sec
+
+
+CLIP-SmallRNA-Human-Diabetic-IFM_S8_L001_R1_001_t2
+Input is being processed as unpaired
+Input:                  	44652 reads          	917289 bases
+Short Read Discards:    	33509 reads (75.04%) 	698078 bases (76.10%)
+Output:                 	11143 reads (24.96%) 	219211 bases (23.90%)
+
+Time:                         	0.215 seconds.
+Reads Processed:       44652 	208.01k reads/sec
+Bases Processed:        917k 	4.27m bases/sec
+
+
+CLIP-SmallRNA-Human-Control-SSM_S5_L001_R1_001_t2
+Input is being processed as unpaired
+Input:                  	133506 reads          	2627881 bases
+Short Read Discards:    	80833 reads (60.55%) 	1576995 bases (60.01%)
+Output:                 	52673 reads (39.45%) 	1050886 bases (39.99%)
+
+Time:                         	0.294 seconds.
+Reads Processed:        133k 	454.20k reads/sec
+Bases Processed:       2627k 	8.94m bases/sec
+
+
+CLIP-SmallRNA-Human-Control-IFM_S7_L001_R1_001_t2
+Input is being processed as unpaired
+Input:                  	83630 reads          	1627783 bases
+Short Read Discards:    	47028 reads (56.23%) 	895462 bases (55.01%)
+Output:                 	36602 reads (43.77%) 	732321 bases (44.99%)
+
+Time:                         	0.236 seconds.
+Reads Processed:       83630 	354.99k reads/sec
+Bases Processed:       1627k 	6.91m bases/sec
